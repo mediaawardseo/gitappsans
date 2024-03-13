@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from './components/Header'
 import Image from "next/image"
-import { getProducts } from '@/sanity/product-utils'
+import { getAllProducts } from '@/sanity/product-utils'
 import ProductCard from './components/ProductCard'
 
 export default async function Home() {
-  const products = await getProducts();
+  const products = await getAllProducts();
   //const posts = await getBlog();
   const textMitKlammern = "{perfekt unperfekt}";
 
@@ -27,7 +27,7 @@ export default async function Home() {
           <div className="flex gap-x-36">
             <h1 className="text-xl font-primary text-white">Stefan Porkert</h1>
             <h1 className="text-xl font-primary text-white">
-              Selected Artwork <br></br> 2001 — 2023
+              Selected Artwork <br></br> 2001 — 2023r
             </h1>
           </div>
 
