@@ -1,6 +1,6 @@
 import ProductDetails from "../../components/ProductDetails"
 import Header from "../../components/Header"
-import {getProductBySlug} from "@/sanity/sanity-utils";
+//import {getProductBySlug} from "@/sanity/sanity-utils";
 import Footer from "@/app/components/Footer";
 
 
