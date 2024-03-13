@@ -27,7 +27,7 @@ export default async function Home() {
           <div className="flex gap-x-36">
             <h1 className="text-xl font-primary text-white">Stefan Porkert</h1>
             <h1 className="text-xl font-primary text-white">
-              Selected Artwork <br></br> 2001 — 2023ttt
+              Selected Artwork <br></br> 2001 — 2023
             </h1>
           </div>
 
