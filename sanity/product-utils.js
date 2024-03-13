@@ -7,7 +7,7 @@ const client = createClient({
   title: "sanityapp",
   apiVersion: "2024-03-12",
   token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
-  useCdn: true,
+  useCdn: false,
 });
 
 export async function getProductBySlug(slug) {
@@ -60,25 +60,25 @@ export async function getProducts() {
       dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
       token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
       apiVersion: "2024-03-12",
-      useCdn: true, // `false` falls du die neuesten Daten benötigst
+      useCdn: false, // `false` falls du die neuesten Daten benötigst
     });
     
     // Rufe die Produktdaten ab
     const products = await client.fetch(
-      groq`*[_type == "product"] | order(createdAt desc) [0...6] {
-        _id,
-        createdAt,
-        name,
-        slug,
-        description,
-        price,
-        "image": image.asset->url,
-        "slug": slug.current,
-        "extraImages": extraImages[].asset->url,
-        colors
-      }`,
-     
-      );
-  
-    return products;
-  }
+        groq`*[_type == "product"]{
+          _id,
+          createdAt,
+          name,
+          slug,
+          description,
+          price,
+          "image": image.asset->url,
+          "slug": slug.current,
+          "extraImages": extraImages[].asset->url,
+          colors
+        }`,
+       
+        );
+    
+      return products;
+    }
