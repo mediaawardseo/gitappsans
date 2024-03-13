@@ -7,7 +7,7 @@ const client = createClient({
   title: "sanityapp",
   apiVersion: "2024-03-12",
   token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
-  useCdn: false,
+  useCdn: true,
 });
 
 export async function getProductBySlug(slug) {
@@ -60,7 +60,7 @@ export async function getProducts() {
       dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
       token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
       apiVersion: "2024-03-12",
-      useCdn: false, // `false` falls du die neuesten Daten benötigst
+      useCdn: true, // `false` falls du die neuesten Daten benötigst
     });
     
     // Rufe die Produktdaten ab
