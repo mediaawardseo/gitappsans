@@ -65,20 +65,20 @@ export async function getProducts() {
     
     // Rufe die Produktdaten ab
     const products = await client.fetch(
-        groq`*[_type == "product"]{
-          _id,
-          createdAt,
-          name,
-          slug,
-          description,
-          price,
-          "image": image.asset->url,
-          "slug": slug.current,
-          "extraImages": extraImages[].asset->url,
-          colors
-        }`,
-       
-        );
-    
-      return products;
-    }
+      groq`*[_type == "product"]{
+        _id,
+        createdAt,
+        name,
+        slug,
+        description,
+        price,
+        "image": image.asset->url,
+        "slug": slug.current,
+        "extraImages": extraImages[].asset->url,
+        colors
+      }`,
+     
+      );
+  
+    return products;
+  }

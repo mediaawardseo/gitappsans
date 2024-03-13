@@ -1,13 +1,15 @@
-import React from 'react'
+import React  from 'react'
 import Header from './components/Header'
 import Image from "next/image"
 import { getAllProducts } from '@/sanity/product-utils'
 import ProductCard from './components/ProductCard'
+import Footer from './components/Footer'
 
 export default async function Home() {
   const products = await getAllProducts();
   //const posts = await getBlog();
   const textMitKlammern = "{perfekt unperfekt}";
+
 
 
   return (
@@ -30,7 +32,7 @@ export default async function Home() {
               Selected Artwork <br></br> 2001 — 2023r
             </h1>
           </div>
-
+          {console.log(products)}
           <p className="mt-6 text-4xl text-white font-primary lg:text-9xl">
             {textMitKlammern}
           </p>
@@ -86,7 +88,7 @@ export default async function Home() {
         </div>
       </div>
 
-    
+      <Footer />
     </div>
   )
 }

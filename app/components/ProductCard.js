@@ -1,8 +1,11 @@
-
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 
+
 function ProductCard({ product }) {
+
+  
   return (
     <Link href={`/details/${product?.slug}`} className="group text-sm">
       <div className="aspect-h-1 aspect-w-1 w-full group relative overflow-hidden ">
